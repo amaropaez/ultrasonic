@@ -1,12 +1,74 @@
-/* If screen size is LESS than 1200px wide */
-@media (max-width: 1200px) {}
+{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
 
-/* If screen size is MORE than 800px wide */
-@media (min-width: 800px) {}
+    }
 
-/* If screen size is BETWEEN 320px and 768px wide AND the orientation is in landscape mode */
-@media (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {}
 
-body {
-    background-color: rgb(189, 215, 245);
-}
+
+    body {
+
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 90px 20px 0;
+
+    }
+
+
+    .header {
+
+
+        background-color: rgb(78, 49, 170);
+        height: 80px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+    }
+
+
+    .barradenavegacion {
+
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+
+    .nav-link {
+
+        color: white;
+        text-decoration: none;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0 40px;
+        line-height: 80px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(223, 230, 236);
+        letter-spacing: 5px;
+
+
+
+    }
+
+    .nav-menu {
+
+        display: flex;
+        margin-right: 40px;
+        list-style: none;
+
+    }
+
+    .nav-menu-item {
+
+font-size: 18px;
+margin: 0 10px;
+line-height: 80px;
+text-transform: uppercase;
+
+    }

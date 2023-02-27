@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,20 +10,29 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
 
-  <nav class="navbar bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="img/ultrasonic.jpg" alt="Logo ultrasonic">
-      </a>
-    </div>
-  </nav>
+  <header class="header">
+
+    <nav class="barradenavegacion">
+      <a href="img/logo.jpg" class="logo"> Ultrasonic </a>
+      <ul class="nav-menu">
+        <li class="nav-menu-item">
+          <a href="*" class="nav-menu-link nav-link"> Inicio </a>
+        </li>
+
+        <li class="nav-menu-item">
+          <a href="*" class="nav-menu-link nav-link"> Materiales Acusticos </a>
+        </li>
+
+      </ul>
 
 
+    </nav>
+  </header>
   <label for="materialacustico">Seleccione el tipo de problema acustico que tienes: </label>
   <select id="problema acustico">
     <option value="">--Haga una elección--</option>
@@ -33,10 +42,10 @@
     <option value="panelesacusticos">Paneles Acusticos</option>
   </select>
 
-  <p></p>
 
 
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
