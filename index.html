@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <script src="https://kit.fontawesome.com/d61ec3060d.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -17,15 +18,20 @@
 
   <header class="header">
 
-    <nav class="barradenavegacion">
-      <a href="img/logo.jpg" class="logo"> Ultrasonic </a>
-      <ul class="nav-menu">
+    <nav class="nav">
+      <a href="**" class="logo"> Ultrasonic </a>
+
+      <button class="nav-toggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu nav-menu-visible">
         <li class="nav-menu-item">
-          <a href="*" class="nav-menu-link nav-link"> Inicio </a>
+          <a href="" class="nav-menu-link nav-link nav-menu-link_active"> Inicio </a>
         </li>
 
         <li class="nav-menu-item">
-          <a href="*" class="nav-menu-link nav-link"> Materiales Acusticos </a>
+          <a href="" class="nav-menu-link nav-link nav-menu-link_active"> Materiales Acusticos </a>
         </li>
 
       </ul>
@@ -33,18 +39,19 @@
 
     </nav>
   </header>
-  <label for="materialacustico">Seleccione el tipo de problema acustico que tienes: </label>
-  <select id="problema acustico">
-    <option value="">--Haga una elección--</option>
-    <option value="vibracion">vibracion</option>
-    <option value="cabinas">cabinas</option>
-    <option value="pantallasacusticas">Pantallas Acusticas</option>
-    <option value="panelesacusticos">Paneles Acusticos</option>
+
+  <label for= "problemaacustico"> Seleccione el tipo de problema acustico que tiene: </label>
+  <select id= "problemaacustico">
+    <option value=""> --Haga una elección-- </option>
+    <option value="vibración"> vibración </option>
+    <option value="cabinas"> cabinas </option>
+    <option value="pantallasacusticas"> Pantallas Acusticas </option>
+    <option value="panelesacusticos"> Paneles Acusticos </option>
   </select>
 
+<p></p>
 
-
-  <script src="js/main.js"></script>
+  <script src="js/main.js"> </script>
 
 </body>
 
