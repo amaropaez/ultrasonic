@@ -42,3 +42,69 @@ function establecerProblemaacustico() {
   }
 }
 
+const productos = [
+  { nombre: 'Panel 50x50x3cm', precio: 450, departamento: 'voces' },
+  { nombre: 'Panel 50x50x3.5cm', precio: 576, departamento: 'voces' },
+  { nombre: 'Panel 50x50x5cm', precio: 768, departamento: 'bar' },
+  { nombre: 'Panel 50x50x7.5cm', precio: 1110, departamento: 'bar' },
+]
+
+// FIND
+const Panel50x50x5cm = productos.find(item => {
+  // return item.nombre === 'Mueble TV'
+  return (/Panel/g).test(item.nombre)
+}) 
+console.log(Panel50x50x5cm)
+
+// MAP
+const productosIva = productos.map(item => {
+  // item.precio = item.precio + item.precio*0.21
+  // return item
+
+  let newPrecio = item.precio + item.precio * 0.21
+  return { ...item, precio: newPrecio }
+})
+console.log(productosIva)
+
+// FILTER
+const productosBar = productos.filter(item => {
+  return item.departamento === 'bar'
+})
+console.log(productosBar)
+
+// CONCAT
+const productosMore = productos.concat({
+  nombre: 'Melamina', precio: 6900, departamento: 'bar'
+})
+console.log(productosMore)
+
+// flatMap
+const lista = productos.map(item => {
+  return item.nombre
+}).join(', ')
+console.log(lista)
+
+// EVERY
+const check = productos.every(item => {
+  return item.precio >= 100
+})
+console.log(check)
+
+// SOME
+const alguno = productos.some(item => {
+  return item.precio > 500
+})
+console.log(alguno)
+
+// INCLUDES
+const materialEspecial = productos.map(item => {
+  return item.nombre
+}).includes("Panel 50x50x5cm")
+
+console.log(materialEspecial)
+
+// REDUCE
+const precioTotal = productos.reduce((total, item) => {
+  return total + item.precio
+}, 0)
+console.log(precioTotal)
