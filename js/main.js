@@ -44,14 +44,18 @@ function establecerProblemaacustico() {
 
 const productos = [
   { nombre: 'Panel 50x50x3cm', precio: 450, departamento: 'voces' },
-  { nombre: 'Panel 50x50x3.5cm', precio: 576, departamento: 'voces' },
-  { nombre: 'Panel 50x50x5cm', precio: 768, departamento: 'bar' },
-  { nombre: 'Panel 50x50x7.5cm', precio: 1110, departamento: 'bar' },
+  { nombre: 'Panel 100x50x3cm', precio: 576, departamento: 'voces' },
+  { nombre: 'Panel 50x50x3.5cm', precio: 768, departamento: 'voces' },
+  { nombre: 'Panel 100x50x3.5cm', precio: 1110, departamento: 'voces' },
+  { nombre: 'Panel 50x50x5cm', precio: 450, departamento: 'bar' },
+  { nombre: 'Panel 100x50x5cm', precio: 576, departamento: 'bar' },
+  { nombre: 'Panel 50x50x7.5cm', precio: 768, departamento: 'bar' },
+  { nombre: 'Panel 100x50x7.5cm', precio: 1110, departamento: 'bar' },
 ]
 
 // FIND
 const Panel50x50x5cm = productos.find(item => {
-  // return item.nombre === 'Mueble TV'
+// return item.nombre === 'Panel 50x50x5cm' 
   return (/Panel/g).test(item.nombre)
 }) 
 console.log(Panel50x50x5cm)
@@ -65,6 +69,7 @@ const productosIva = productos.map(item => {
   return { ...item, precio: newPrecio }
 })
 console.log(productosIva)
+
 
 // FILTER
 const productosBar = productos.filter(item => {
