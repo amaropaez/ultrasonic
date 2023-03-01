@@ -62,8 +62,6 @@ console.log(Panel50x50x5cm)
 
 // MAP
 const productosIva = productos.map(item => {
-  // item.precio = item.precio + item.precio*0.21
-  // return item
 
   let newPrecio = item.precio + item.precio * 0.21
   return { ...item, precio: newPrecio }
@@ -113,3 +111,5 @@ const precioTotal = productos.reduce((total, item) => {
   return total + item.precio
 }, 0)
 console.log(precioTotal)
+
+
