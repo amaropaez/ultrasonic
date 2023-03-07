@@ -159,55 +159,119 @@ body {
 }
 
 main{
-
     width: 100%;
     max-width: 1000px;
     margin: auto;
 }
 
-.title {
+.title{
     text-align: center;
     margin-top: 60px;
-
 }
 
-.container-box {
+.container-box{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
-.box {
+.box{
     width: 250px;
-    height: 250px;
+    height: 310px;
     margin: 10px;
     padding: 20px;
     border: 2px solid #eeeeee;
-border-radius: 14px;
-text-align: center;
-margin-top: 100px;
-}
-
-
-.box img {
-
-    width: 60px;
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
 
 }
 
+.box img{
+    width: 60%;
+    transition: all 400ms;
+}
 
-.box h2 {
-
+.box h2{
     font-size: 16px;
-margin-top: 10px;
-
+    margin-top: 10px;
+    transition: all 500ms;
 }
 
-.box p {
-font-size: 14px;
-color: #7a7a7a;
+.box .container-p{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0px 10px;
+    border-radius: 0px 0px 14px 14px;
+}
+
+.box p{
+    font-size: 14px;
+    color: #030303;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 600ms;
+}
+
+.box .check{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #93abee;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background: rgb(218, 209, 236);
+}
+
+.box .check i{
+    margin-top: 6px;
+    display: none;
+    color: rgb(230, 204, 204)
+    
+}
+
+/*Efecto Hover*/
 
 
+.box:hover{
+    background: #fbfbfe;
+}
+
+.box:hover img{
+    transform: translateY(-90px);
+}
+
+.box:hover h2{
+    transform: translateY(-90px);
+}
+
+.box:hover .container-p p{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+/*Clases que estaremos utilizando en JavaScript*/
+
+.box-selected{
+    border-color: red;
+    transition: all 600ms;
+}
+
+.icon-check{
+    display: block !important;
+}
+
+.check-selected{
+    background: red !important;
+    border: none;
+    transition: all 600ms;
 }
