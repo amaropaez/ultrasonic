@@ -4,9 +4,6 @@
 }
 
 
-
-
-
 body {
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -54,8 +51,6 @@ body {
     color: rgb(223, 230, 236);
     letter-spacing: 5px;
 
-
-
 }
 
 .nav-menu {
@@ -63,7 +58,6 @@ body {
     display: flex;
     margin-right: 40px;
     list-style: none;
-
 }
 
 .nav-menu-item {
@@ -81,8 +75,6 @@ body {
     padding: 8px 12px;
     border-radius: 3px;
 }
-
-
 
 .nav-menu-link:hover,
 .nav-menu-link_active {
@@ -162,5 +154,5 @@ body {
         outline: none;
     }
 
-
 }
+

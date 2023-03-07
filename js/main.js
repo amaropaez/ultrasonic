@@ -113,3 +113,9 @@ const precioTotal = productos.reduce((total, item) => {
 console.log(precioTotal)
 
 
+
+
+
+
+
+
