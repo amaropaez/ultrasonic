@@ -55,9 +55,9 @@ const productos = [
 
 // FIND
 const Panel50x50x5cm = productos.find(item => {
-// return item.nombre === 'Panel 50x50x5cm' 
+  // return item.nombre === 'Panel 50x50x5cm' 
   return (/Panel/g).test(item.nombre)
-}) 
+})
 console.log(Panel50x50x5cm)
 
 // MAP
@@ -139,56 +139,56 @@ icon_check3 = document.querySelector(".box3 .fa-check");
 
 value_box = 0;
 
-function box_selected1 () {
-    box2.classList.remove('box-selected');
-    check_bg2.classList.remove('check-selected');
-    icon_check2.classList.remove('icon-check');
+function box_selected1() {
+  box2.classList.remove('box-selected');
+  check_bg2.classList.remove('check-selected');
+  icon_check2.classList.remove('icon-check');
 
-    box3.classList.remove('box-selected');
-    check_bg3.classList.remove('check-selected');
-    icon_check3.classList.remove('icon-check');
+  box3.classList.remove('box-selected');
+  check_bg3.classList.remove('check-selected');
+  icon_check3.classList.remove('icon-check');
 
-    box1.classList.toggle('box-selected');
-    check_bg1.classList.toggle('check-selected');
-    icon_check1.classList.toggle('icon-check');
+  box1.classList.toggle('box-selected');
+  check_bg1.classList.toggle('check-selected');
+  icon_check1.classList.toggle('icon-check');
 
-    value_box = 1;
-    console.log(value_box);
+  value_box = 1;
+  console.log(value_box);
 }
 
-function box_selected2 () {
+function box_selected2() {
 
-    box1.classList.remove('box-selected');
-    check_bg1.classList.remove('check-selected');
-    icon_check1.classList.remove('icon-check');
+  box1.classList.remove('box-selected');
+  check_bg1.classList.remove('check-selected');
+  icon_check1.classList.remove('icon-check');
 
-    box3.classList.remove('box-selected');
-    check_bg3.classList.remove('check-selected');
-    icon_check3.classList.remove('icon-check');
+  box3.classList.remove('box-selected');
+  check_bg3.classList.remove('check-selected');
+  icon_check3.classList.remove('icon-check');
 
-    box2.classList.toggle('box-selected');
-    check_bg2.classList.toggle('check-selected');
-    icon_check2.classList.toggle('icon-check');
+  box2.classList.toggle('box-selected');
+  check_bg2.classList.toggle('check-selected');
+  icon_check2.classList.toggle('icon-check');
 
-    value_box = 2;
-    console.log(value_box);
+  value_box = 2;
+  console.log(value_box);
 }
 
-function box_selected3 () {
-    box1.classList.remove('box-selected');
-    check_bg1.classList.remove('check-selected');
-    icon_check1.classList.remove('icon-check');
+function box_selected3() {
+  box1.classList.remove('box-selected');
+  check_bg1.classList.remove('check-selected');
+  icon_check1.classList.remove('icon-check');
 
-    box2.classList.remove('box-selected');
-    check_bg2.classList.remove('check-selected');
-    icon_check2.classList.remove('icon-check');
+  box2.classList.remove('box-selected');
+  check_bg2.classList.remove('check-selected');
+  icon_check2.classList.remove('icon-check');
 
-    box3.classList.toggle('box-selected');
-    check_bg3.classList.toggle('check-selected');
-    icon_check3.classList.toggle('icon-check');
+  box3.classList.toggle('box-selected');
+  check_bg3.classList.toggle('check-selected');
+  icon_check3.classList.toggle('icon-check');
 
-    value_box = 3;
-    console.log(value_box);
+  value_box = 3;
+  console.log(value_box);
 }
 
 
@@ -196,7 +196,7 @@ const btnCart = document.querySelector('.container-icon')
 const containerCartProducts = document.querySelector('.container-cart-products')
 
 btnCart.addEventListener('click', () => {
-    containerCartProducts.classList.toggle('hidden-cart')
+  containerCartProducts.classList.toggle('hidden-cart')
 })
 
 
