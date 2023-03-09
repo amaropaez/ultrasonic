@@ -14,13 +14,13 @@ body {
     display: flex;
     justify-content: space-between;
     height: 12vh;
-    background-color: rgb(160, 160, 247);
+    background-color: rgb(173, 191, 241);
 }
 
 .navbar-logo {
     justify-self: start;
     margin-left: 20px;
-    color: black;
+    color: rgb(18, 16, 114);
     margin-top: 4vh;
     cursor: pointer;
 }
