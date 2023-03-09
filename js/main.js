@@ -125,9 +125,13 @@ verCarrito.addEventListener("click", () => {
    <img src="${product.img}">
    <h3>${product.nombre}</h3>
     <p>${product.precio}</p>
-  `;
+   `;
 
 
     modalContainer.append(carritoContent);
   });
+
+const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+
+
 });
