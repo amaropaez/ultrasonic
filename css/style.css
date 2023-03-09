@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+
+}
+
+/*navbar*/
+.nav-container {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 12vh;
+    background-color: rgb(160, 160, 247);
+}
+
+.navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+    color: black;
+    margin-top: 4vh;
+    cursor: pointer;
+}
+
+.ver-carrito {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 3.5vh;
+    cursor: pointer;
+}
+
+/*banner styles*/
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(235, 225, 225, 0.4), rgba(233, 208, 208, 0.4)), 
+    url("https://panelesacusticos.net/wp-content/uploads/2020/08/Acondicionamiento-acustico-con-paneles-fonoabsorbentes-edited.jpg");
+
+}
+
+.banner-container {
+    text-align: center;
+    padding: 15% 0;
+}
+
+.banner h1 {
+    margin: 0;
+    color: rgb(241, 222, 222);
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(245, 238, 238, 0.2);
+}
+
