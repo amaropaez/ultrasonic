@@ -54,3 +54,9 @@ body {
     text-shadow: 1px 1px 3px rgba(245, 238, 238, 0.2);
 }
 
+.banner p {
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(red, green, blue, alpha);
+}
