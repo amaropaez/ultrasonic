@@ -4,7 +4,7 @@ const shopContent = document.getElementById("shopContent")
 
 const productos = [
   {
-    id: 11
+    id: 1,
     nombre: "panel acustico 50x50x3cm",
     precio: 410,
     img: "https://http2.mlstatic.com/D_NQ_NP_2X_865529-MLA43938604533_102020-F.webp",
@@ -44,7 +44,7 @@ const productos = [
   },
 
   {
-    id: 7
+    id: 7,
     nombre: "panel acustico 50x50x7cm",
     precio: 995.75,
     img: "https://http2.mlstatic.com/D_NQ_NP_2X_865529-MLA43938604533_102020-F.webp",
@@ -72,15 +72,15 @@ const productos = [
 
 let carrito = [];
 
-productos.forEach((product) => {
+productos.forEach((product) =>{
   let content = document.createElement("div");
   content.innerHTML = `
     <img src="${product.img}">
       <h3>${product.nombre}</h3>
       <p>${product.precio} $</p>
-      `;
+  `;
 
 
-      shopContent.append(content);
+  shopContent.append(content);
 
 });
