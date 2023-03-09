@@ -1,202 +1,30 @@
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
-
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible");
-
-  if (navMenu.classList.contains("nav-menu_visible")) {
-    navToggle.setAttribute("aria-label", "Cerrar menú");
-  } else {
-    navToggle.setAttribute("aria-label", "Abrir menú");
-  }
-});
-
-
-
-let seleccionar = document.querySelector('select');
-let parrafo = document.querySelector('p');
-
-seleccionar.addEventListener('change', establecerProblemaacustico);
-
-function establecerProblemaacustico() {
-  let eleccion = seleccionar.value;
-
-  if (eleccion === 'vibracion') {
-    parrafo.textContent = 'Amortiguadores Antivibratorios: SOLUCION TOTAL GARANTIZADA!! Nuestro departamento de ingeniería ha desarrollado una gran variedad de amortiguadores antivibratorios para todo tipo de máquinas. Podemos dividir las máquinas en tres grandes grupos, a saber: 1- Máquinas que trabajan por deformación o golpe (guillotinas, martinetes, balancines, etc.). 2- Máquinas rotativas (compresores, generadores eléctricos, turbinas, etc.). 3- Máquinas que trabajan por arranque de viruta, en general máquinas herramientas tales como tornos, fresadoras, rectificadoras, equipos de mecanizado CNC, etc.';
-  }
-
-  else if (eleccion === 'cabinas') {
-    parrafo.textContent = 'Nuestras cabinas son totalmente desmontables, y nuestro departamento de ingeniería y diseño brinda al cliente un boceto previo básico que luego es debatido con los operadores de la máquina a cubrir, de manera que el diseño final resulte operativamente apto para el desempeño de la misma.';
-  }
-
-  else if (eleccion === 'pantallasacusticas') {
-    parrafo.textContent = 'Es muy común la utilización de pantallas acústicas para cubrir las emisiones sonoras originadas en el funcionamiento de equipos (en general turbinas, enfriadores, equipos de A/A. etc.) ubicados en el exterior, en terrazas. En general estos equipos de frío se encuentran emplazados en zonas densamente pobladas y por sus características, muchos de ellos funcionan durante el horario nocturno, generando perturbaciones sonoras que afectan a vecinos.';
-  }
-
-  else if (eleccion === 'panelesacusticos') {
-    parrafo.textContent = 'Contamos con una amplia gama de paneles acusticos, cada uno fabricado con el mejor material para brindar de esta forma un óptimo servicio de aislación acústica. Los paneles acusticos cuentan con un aspecto poroso y una superficie irregular que hacen que estos paneles acusticos sean un excelente medio para controlar y equilibrar las emisiones sonoras dentro de recintos parcial y totalmente cerrados. Paneles acústicos de absorción para diferentes ambientes.';
-  }
-
-  else {
-    parrafo.textContent = '';
-  }
-}
-
 const productos = [
-  { nombre: 'Panel 50x50x3cm', precio: 450, departamento: 'voces' },
-  { nombre: 'Panel 100x50x3cm', precio: 576, departamento: 'voces' },
-  { nombre: 'Panel 50x50x3.5cm', precio: 768, departamento: 'voces' },
-  { nombre: 'Panel 100x50x3.5cm', precio: 1110, departamento: 'voces' },
-  { nombre: 'Panel 50x50x5cm', precio: 450, departamento: 'bar' },
-  { nombre: 'Panel 100x50x5cm', precio: 576, departamento: 'bar' },
-  { nombre: 'Panel 50x50x7.5cm', precio: 768, departamento: 'bar' },
-  { nombre: 'Panel 100x50x7.5cm', precio: 1110, departamento: 'bar' },
-]
+  {nombre: "panel acustico 50x50x3cm", precio: 410},
+  {nombre: "panel acustico 100x50x3cm", precio: 820},
+  {nombre: "panel acustico 50x50x3.5cm", precio: 524.50},
+  {nombre: "panel acustico 100x50x3.5cm", precio: 1049},
+  {nombre: "panel acustico 50x50x5cm", precio: 698.50},
+  {nombre: "panel acustico 100x50x5cm", precio: 1397},
+  {nombre: "panel acustico 50x50x7cm", precio: 995.75},
+  {nombre: "panel acustico 100x50x7cm", precio: 1991.50},
+  {nombre: "panel acustico 50x50x7.5cm", precio: 1009.50},
+  {nombre: "panel acustico 100x50x7.5cm", precio: 2018.50},
+];
 
-// FIND
-const Panel50x50x5cm = productos.find(item => {
-  // return item.nombre === 'Panel 50x50x5cm' 
-  return (/Panel/g).test(item.nombre)
-})
-console.log(Panel50x50x5cm)
+let carrtio = []
 
-// MAP
-const productosIva = productos.map(item => {
+let seleccion = prompt("hola desea comprar algun producto si o no")
 
-  let newPrecio = item.precio + item.precio * 0.21
-  return { ...item, precio: newPrecio }
-})
-console.log(productosIva)
-
-
-// FILTER
-const productosBar = productos.filter(item => {
-  return item.departamento === 'bar'
-})
-console.log(productosBar)
-
-// CONCAT
-const productosMore = productos.concat({
-  nombre: 'Melamina', precio: 6900, departamento: 'bar'
-})
-console.log(productosMore)
-
-// flatMap
-const lista = productos.map(item => {
-  return item.nombre
-}).join(', ')
-console.log(lista)
-
-// EVERY
-const check = productos.every(item => {
-  return item.precio >= 100
-})
-console.log(check)
-
-// SOME
-const alguno = productos.some(item => {
-  return item.precio > 500
-})
-console.log(alguno)
-
-// INCLUDES
-const materialEspecial = productos.map(item => {
-  return item.nombre
-}).includes("Panel 50x50x5cm")
-
-console.log(materialEspecial)
-
-// REDUCE
-const precioTotal = productos.reduce((total, item) => {
-  return total + item.precio
-}, 0)
-console.log(precioTotal)
-
-
-document.querySelector(".box1").addEventListener("click", box_selected1);
-document.querySelector(".box2").addEventListener("click", box_selected2);
-document.querySelector(".box3").addEventListener("click", box_selected3);
-
-//declarando variables
-
-//box1
-
-box1 = document.querySelector(".box1");
-check_bg1 = document.querySelector(".box1 .check");
-icon_check1 = document.querySelector(".box1 .fa-check");
-
-//box2
-
-box2 = document.querySelector(".box2");
-check_bg2 = document.querySelector(".box2 .check");
-icon_check2 = document.querySelector(".box2 .fa-check");
-
-//box3
-
-box3 = document.querySelector(".box3");
-check_bg3 = document.querySelector(".box3 .check");
-icon_check3 = document.querySelector(".box3 .fa-check");
-
-value_box = 0;
-
-function box_selected1() {
-  box2.classList.remove('box-selected');
-  check_bg2.classList.remove('check-selected');
-  icon_check2.classList.remove('icon-check');
-
-  box3.classList.remove('box-selected');
-  check_bg3.classList.remove('check-selected');
-  icon_check3.classList.remove('icon-check');
-
-  box1.classList.toggle('box-selected');
-  check_bg1.classList.toggle('check-selected');
-  icon_check1.classList.toggle('icon-check');
-
-  value_box = 1;
-  console.log(value_box);
+while(seleccion !="si" && seleccion !="no"){
+  alert("por favor ingresar si o no")
+  seleccion = prompt("hola desea comprar algo si o no")
 }
 
-function box_selected2() {
-
-  box1.classList.remove('box-selected');
-  check_bg1.classList.remove('check-selected');
-  icon_check1.classList.remove('icon-check');
-
-  box3.classList.remove('box-selected');
-  check_bg3.classList.remove('check-selected');
-  icon_check3.classList.remove('icon-check');
-
-  box2.classList.toggle('box-selected');
-  check_bg2.classList.toggle('check-selected');
-  icon_check2.classList.toggle('icon-check');
-
-  value_box = 2;
-  console.log(value_box);
+if(seleccion == "si"){
+  alert("a continuacion nuestra lista de productos")
+  let todoslosproductos = productos.maps(
+    (producto) => producto.nombre + "" + producto.precio + "$"
+    );
+    
+  alert(todoslosproductos.join(" - "))
 }
-
-function box_selected3() {
-  box1.classList.remove('box-selected');
-  check_bg1.classList.remove('check-selected');
-  icon_check1.classList.remove('icon-check');
-
-  box2.classList.remove('box-selected');
-  check_bg2.classList.remove('check-selected');
-  icon_check2.classList.remove('icon-check');
-
-  box3.classList.toggle('box-selected');
-  check_bg3.classList.toggle('check-selected');
-  icon_check3.classList.toggle('icon-check');
-
-  value_box = 3;
-  console.log(value_box);
-}
-
-
-const btnCart = document.querySelector('.container-icon')
-const containerCartProducts = document.querySelector('.container-cart-products')
-
-btnCart.addEventListener('click', () => {
-  containerCartProducts.classList.toggle('hidden-cart')
-})
-
-
