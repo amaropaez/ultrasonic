@@ -82,17 +82,87 @@ while (seleccion != "no") {
   }
 
   seleccion = prompt("desea seguir comprando?")
-  
+
   while (seleccion === "no") {
     alert("gracias por tu compra!")
 
     carrito.forEach((carritoFinal) => {
-    
+
       console.log('producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}')
     })
     break;
-  }   
+  }
 }
 
 const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
 console.log('el total a pagar por su compra es : ${total}')
+
+
+/****carrito******/
+
+const productos = [
+  {
+    id: 11
+    nombre: "panel acustico 50x50x3cm",
+    precio: 410,
+    img: "",
+
+  },
+
+  {
+    id: 2,
+    nombre: "panel acustico 100x50x3cm",
+    precio: 820,
+    img: "",
+  },
+
+  {
+    id: 3,
+    nombre: "panel acustico 50x50x3.5cm",
+    precio: 524.50,
+    img: "",
+  },
+  {
+    id: 4,
+    nombre: "panel acustico 100x50x3.5cm",
+    precio: 1049,
+    img: "",
+  },
+  {
+    id: 5,
+    nombre: "panel acustico 50x50x5cm",
+    precio: 698.50,
+    img: "",
+  },
+  {
+    id: 6,
+    nombre: "panel acustico 100x50x5cm",
+    precio: 1397,
+    img: "",
+  },
+  id: 7,
+  {
+    nombre: "panel acustico 50x50x7cm",
+    precio: 995.75,
+    img: "",
+  },
+  {
+    id: 8,
+    nombre: "panel acustico 100x50x7cm",
+    precio: 1991.50,
+    img: "",
+  },
+  {
+    id: 9,
+    nombre: "panel acustico 50x50x7.5cm",
+    precio: 1009.50,
+    img: "",
+  },
+  {
+    id: 10,
+    nombre: "panel acustico 100x50x7.5cm",
+    precio: 2018.50,
+    img: "",
+  },
+  
+]
