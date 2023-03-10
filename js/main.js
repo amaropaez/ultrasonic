@@ -102,7 +102,10 @@ productos.forEach((product) => {
   });
 });
 
-verCarrito.addEventListener("click", () => {
+
+/***CARRITO*****/
+
+const pintarCarrito = () => {
   modalContainer.innerHTML = "";
 modalContainer.style.display = "flex"
 
@@ -134,7 +137,17 @@ modalContainer.style.display = "flex"
 
 
     modalContainer.append(carritoContent);
+
+
+let eliminar = document.createElement("span");
+eliminar.innerText = "❎";
+eliminar.className = "delete-product";
+carritoContent.append(eliminar);
+
   });
+
+
+
 
 const total = carrito.reduce((acc, el) => acc + el.precio, 0);
 
@@ -142,4 +155,9 @@ const totalBuying = document.createElement("div")
 totalBuying.className = "total-content"
 totalBuying.innerHTML = `total a pagar: ${total} $`;
 modalContainer.append(totalBuying);
-});
+
+
+};
+
+verCarrito.addEventListener("click", pintarCarrito);
+
