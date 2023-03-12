@@ -11,13 +11,9 @@ const getProducts = async ()=> {
 
   const response = await fetch("./js/extensions.json");
   const data = await response.json();
-  console.log(data);
-};
-
-getProducts();
 
 
-productos.forEach((product) => {
+  data.forEach((product) => {
   let content = document.createElement("div");
   content.className = " card";
   content.innerHTML = `
@@ -58,12 +54,29 @@ productos.forEach((product) => {
       });
     }
     console.log(carrito);
-
+console.log(carrito.length);
     carritoCounter();
+    saveLocal();
 
   });
 
 });
+
+
+
+};
+
+getProducts();
+
+
+//set item
+
+const saveLocal = () => {
+localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+//get item
+
 
 
 /***CARRITO*****/
