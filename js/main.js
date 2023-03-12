@@ -5,10 +5,17 @@ const modalContainer = document.getElementById("modal-container")
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
-const productos = 
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+const getProducts = async ()=> {
 
-let carrito = [];
+  const response = await fetch("./js/extensions.json");
+  const data = await response.json();
+  console.log(data);
+};
+
+getProducts();
+
 
 productos.forEach((product) => {
   let content = document.createElement("div");
