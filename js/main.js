@@ -125,6 +125,9 @@ productos.forEach((product) => {
       });
     }
     console.log(carrito);
+
+    carritoCounter();
+
   });
 
 });
@@ -167,7 +170,7 @@ const pintarCarrito = () => {
 
     modalContainer.append(carritoContent);
 
-console.log(carrito.length);
+    console.log(carrito.length);
 
     let eliminar = document.createElement("span");
     eliminar.innerText = "❎";
@@ -176,8 +179,6 @@ console.log(carrito.length);
 
     eliminar.addEventListener("click", eliminarProducto);
   });
-
-
 
 
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
@@ -199,6 +200,13 @@ const eliminarProducto = () => {
     return carritoId !== foundId;
   });
 
+  carritoCounter();
 
   pintarCarrito();
 };
+
+
+const carritoCounter = () => {
+  cantidadCarrito.style.display = "block";
+  cantidadCarrito.innerText = carrito.length;
+}
