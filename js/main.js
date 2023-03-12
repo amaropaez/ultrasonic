@@ -2,6 +2,9 @@
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container")
+const cantidadCarrito = document.getElementById("cantidadCarrito");
+
+
 const productos = [
   {
     id: 1,
@@ -164,6 +167,7 @@ const pintarCarrito = () => {
 
     modalContainer.append(carritoContent);
 
+console.log(carrito.length);
 
     let eliminar = document.createElement("span");
     eliminar.innerText = "❎";
