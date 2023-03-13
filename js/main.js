@@ -7,16 +7,16 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const getProducts = async ()=> {
+const getProducts = async () => {
 
   const response = await fetch("./js/extensions.json");
   const data = await response.json();
 
 
   data.forEach((product) => {
-  let content = document.createElement("div");
-  content.className = " card";
-  content.innerHTML = `
+    let content = document.createElement("div");
+    content.className = " card";
+    content.innerHTML = `
     <img src="${product.img}">
       <h3>${product.nombre}</h3>
       <p class="price">${product.precio} $</p>
@@ -24,43 +24,43 @@ const getProducts = async ()=> {
   `;
 
 
-  shopContent.append(content);
+    shopContent.append(content);
 
-  let comprar = document.createElement("button")
-  comprar.innerText = "comprar";
-  comprar.className = "comprar";
+    let comprar = document.createElement("button")
+    comprar.innerText = "comprar";
+    comprar.className = "comprar";
 
-  content.append(comprar);
+    content.append(comprar);
 
 
-  comprar.addEventListener("click", () => {
+    comprar.addEventListener("click", () => {
 
-    const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
-    if (repeat) {
-      carrito.map((prod) => {
-        if (prod.id === product.id) {
-          prod.cantidad++;
-        }
-      })
-    }
+      const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+      if (repeat) {
+        carrito.map((prod) => {
+          if (prod.id === product.id) {
+            prod.cantidad++;
+          }
+        })
+      }
 
-    else {
-      carrito.push({
-        id: product.id,
-        img: product.img,
-        nombre: product.nombre,
-        precio: product.precio,
-        cantidad: product.cantidad,
-      });
-    }
-    console.log(carrito);
-console.log(carrito.length);
-    carritoCounter();
-    saveLocal();
+      else {
+        carrito.push({
+          id: product.id,
+          img: product.img,
+          nombre: product.nombre,
+          precio: product.precio,
+          cantidad: product.cantidad,
+        });
+      }
+      console.log(carrito);
+      console.log(carrito.length);
+      carritoCounter();
+      saveLocal();
+
+    });
 
   });
-
-});
 
 
 
@@ -72,7 +72,7 @@ getProducts();
 //set item
 
 const saveLocal = () => {
-localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 //get item
@@ -108,12 +108,28 @@ const pintarCarrito = () => {
    <img src="${product.img}">
    <h3>${product.nombre}</h3>
     <p>${product.precio} $</p>
+    <span class="restar"> - </span>
     <p>Cantidad: ${product.cantidad}</p>
+    <span class="sumar"> + </span>
     <p>Total: ${product.cantidad * product.precio}</p>
    `;
 
 
     modalContainer.append(carritoContent);
+
+    let restar = carritoContent.querySelector(".restar")
+    restar.addEventListener("click", () => {
+      if(product.cantidad !== 1){
+      product.cantidad--;
+    }
+      pintarCarrito ();
+    });
+
+    let sumar = carritoContent.querySelector(".sumar")
+    sumar.addEventListener("click", () => {
+      product.cantidad++;
+      pintarCarrito ();
+    });
 
     console.log(carrito.length);
 
@@ -146,7 +162,7 @@ const eliminarProducto = () => {
   });
 
   carritoCounter();
-saveLocal();
+  saveLocal();
   pintarCarrito();
 
 
@@ -156,9 +172,9 @@ saveLocal();
 const carritoCounter = () => {
   cantidadCarrito.style.display = "block";
 
-const carritoLength = carrito.length;
+  const carritoLength = carrito.length;
 
-localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+  localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
 
   cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 }
