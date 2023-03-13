@@ -12,29 +12,28 @@ const getProducts = async () => {
   const response = await fetch("./js/extensions.json");
   const data = await response.json();
 
-
   data.forEach((product) => {
     let content = document.createElement("div");
     content.className = " card";
     content.innerHTML = `
-    <img src="${product.img}">
-      <h3>${product.nombre}</h3>
-      <p class="price">${product.precio} $</p>
-      
-  `;
-
-
+      <img src="${product.img}">
+        <h3>${product.nombre}</h3>
+        <p class="price">${product.precio} $</p>
+        
+    `;
+  
+  
     shopContent.append(content);
-
+  
     let comprar = document.createElement("button")
     comprar.innerText = "comprar";
     comprar.className = "comprar";
-
+  
     content.append(comprar);
-
-
+  
+  
     comprar.addEventListener("click", () => {
-
+  
       const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
       if (repeat) {
         carrito.map((prod) => {
@@ -43,7 +42,7 @@ const getProducts = async () => {
           }
         })
       }
-
+  
       else {
         carrito.push({
           id: product.id,
@@ -52,19 +51,17 @@ const getProducts = async () => {
           precio: product.precio,
           cantidad: product.cantidad,
         });
-      }
+      
       console.log(carrito);
       console.log(carrito.length);
       carritoCounter();
       saveLocal();
-
+      }
     });
-
   });
-
-
-
+  
 };
+
 
 getProducts();
 
@@ -119,16 +116,18 @@ const pintarCarrito = () => {
 
     let restar = carritoContent.querySelector(".restar")
     restar.addEventListener("click", () => {
-      if(product.cantidad !== 1){
-      product.cantidad--;
-    }
-      pintarCarrito ();
+      if (product.cantidad !== 1) {
+        product.cantidad--;
+      }
+      saveLocal();
+      pintarCarrito();
     });
 
     let sumar = carritoContent.querySelector(".sumar")
     sumar.addEventListener("click", () => {
       product.cantidad++;
-      pintarCarrito ();
+      saveLocal();
+      pintarCarrito();
     });
 
     console.log(carrito.length);
