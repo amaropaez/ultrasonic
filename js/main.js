@@ -78,7 +78,6 @@ localStorage.setItem("carrito", JSON.stringify(carrito));
 //get item
 
 
-
 /***CARRITO*****/
 
 const pintarCarrito = () => {
@@ -147,12 +146,21 @@ const eliminarProducto = () => {
   });
 
   carritoCounter();
-
+saveLocal();
   pintarCarrito();
+
+
 };
 
 
 const carritoCounter = () => {
   cantidadCarrito.style.display = "block";
-  cantidadCarrito.innerText = carrito.length;
+
+const carritoLength = carrito.length;
+
+localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+
+  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 }
+
+carritoCounter();
