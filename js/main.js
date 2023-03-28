@@ -1,3 +1,34 @@
+const opcion = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '24fb4cb4b7msh25ccccab35e8eedp1b192cjsn4ec6e9cba8c7',
+		'X-RapidAPI-Host': 'cloudlabs-text-to-speech.p.rapidapi.com'
+	}
+};
+
+fetch('https://cloudlabs-text-to-speech.p.rapidapi.com/voices?language_code=en-US', opcion)
+	.then(res => res.json())
+	.then(res => console.log(res))
+	.catch(mal => console.error(mal));
+
+  const encodedParams = new URLSearchParams();
+encodedParams.append("accessToken", "<REQUIRED>");
+encodedParams.append("locationId", "<REQUIRED>");
+
+const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': '24fb4cb4b7msh25ccccab35e8eedp1b192cjsn4ec6e9cba8c7',
+		'X-RapidAPI-Host': 'SquareECommerceserg-osipchukV1.p.rapidapi.com'
+	},
+	body: encodedParams
+};
+
+fetch('https://squareecommerceserg-osipchukv1.p.rapidapi.com/getTransactions', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
