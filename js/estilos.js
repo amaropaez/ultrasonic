@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     //Objeto del Banner
@@ -149,7 +150,8 @@ $(document).ready(function () {
 
 				// Reiniciamos la posicion a 1
 				banner.posicion = banner.posicion - 1;
-			} else {
+			} 
+			else {
 
 				// Nos aseguramos de que los slides empiecen a la izquierda
 				banner.padre.children().not('.active').css({
@@ -203,7 +205,8 @@ $(document).ready(function () {
 				
 			// Incrementamos la posicion en 1
 			info.posicion = info.posicion + 1;
-		} else {
+		} 
+		else {
 			// Hacemos que el slide activo (es decir el ultimo), se anime hacia la derecha
 			$('#info .active').animate({
 				'left': '-100%'
@@ -260,7 +263,8 @@ $(document).ready(function () {
 
 				// Reiniciamos la posicion a 1
 				info.posicion = info.posicion - 1;
-			} else {
+			}
+			 else {
 
 				// Nos aseguramos de que los slides empiecen a la izquierda
 				info.padre.children().not('.active').css({
@@ -288,4 +292,4 @@ $(document).ready(function () {
 
 			altoInfo();
 		});
-});
+	});

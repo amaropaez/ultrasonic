@@ -44,8 +44,6 @@ background: url('../img/fondo.png');
     cursor: pointer;
 }
 
-/*banner styles*/
-
 
 a {
     text-decoration: none;
@@ -259,38 +257,6 @@ padding: 20px 80px;
 
 .redes-sociales .web {
     background: #3b5998;
-}
-
-
-/*
-.banner {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-image: linear-gradient(rgba(235, 225, 225, 0.4), rgba(233, 208, 208, 0.4)), 
-    url("https://panelesacusticos.net/wp-content/uploads/2020/08/Acondicionamiento-acustico-con-paneles-fonoabsorbentes-edited.jpg");
-
-}
-*/
-
-
-.banner-container {
-    text-align: center;
-    padding: 15% 0;
-}
-
-.banner h1 {
-    margin: 0;
-    color: rgb(241, 222, 222);
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(245, 238, 238, 0.2);
-}
-
-.banner p {
-    font-size: 30px;
-    color: white;
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(red, green, blue, alpha);
 }
 
 
