@@ -1,6 +1,10 @@
+
+
 body {
     margin: 0px;
-
+    background-size: cover;
+    background-attachment: fixed;
+font-family: 'open sans', sans-serif, Arial, Helvetica;
 }
 
 /*navbar*/
